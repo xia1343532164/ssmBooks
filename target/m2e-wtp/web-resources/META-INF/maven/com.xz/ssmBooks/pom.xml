@@ -84,9 +84,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>2.0.1.Final</version>
+		   <groupId>org.hibernate</groupId>
+ 		   <artifactId>hibernate-validator</artifactId>
+     	   <version>6.0.9.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -98,7 +98,8 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-			<scope>provided</scope>
+			<!-- 运行时有它jetty会警告，但是没它tomcat会报错（致命） -->
+			<!-- <scope>provided</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>

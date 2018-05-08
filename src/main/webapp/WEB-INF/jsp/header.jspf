@@ -14,6 +14,8 @@
 	</form>
 	
 	<sec:authorize access="hasRole('ADMIN')">
+	<%-- 		对于jetty，   ${contextPath}是/ --%>
+    <%-- 		对于Tomcat，${contextPath}是/ssm --%>
 	   <a href="${contextPath}/admin/book">客户列表</a>
 	</sec:authorize>
 </div>
