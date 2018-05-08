@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+
+<div class="header">
+     <span>欢迎您：<sec:authentication property="name"/></span>
+ <br>
+	<form action="${contextPath}/logout" method="post" style="display: inline;">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+		<button type="submit">退出系统</button>
+	</form>
+	
+	<sec:authorize access="hasRole('ADMIN')">
+	   <a href="${contextPath}/admin/book">客户列表</a>
+	</sec:authorize>
+</div>
